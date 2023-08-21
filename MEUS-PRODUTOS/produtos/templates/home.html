@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #BEADFA;
+}
+
+.cabecalho{
+             display: flex;
+            align-items: center ;
+            justify-content: center ;
+            
+}
+
+header{
+    background-color: #5C4B99;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.titulo-cabecalho{
+color: #fff;
+}
+
+main{
+            display: flex;
+            align-items: center ;
+            justify-content: center ;
+            height: 100vh;
+}
+
+        .botoes{
+            background-color: #5C4B99 ;
+            display: flex;
+            align-items: center ;
+            justify-content: center ;
+            height: 20rem;
+            width: 30rem;
+            gap: 0.8rem;
+            border-radius: 1rem;
+        }
+
+        .botao-cadastrar, .botao-visualizar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #D0BFFF ;
+            border-radius: 0.6rem;
+            width: 10rem;
+            height: 5rem;
+            text-align: center;
+        }
+
+        .botao-cadastrar a , .botao-visualizar a {
+           color:  #fff;
+           text-decoration: none;
+           font-size: 2rem;
+       }
+
+       footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+         text-align: center;
+          background-color: #5C4B99;
+          height: 8rem;
+          color:  #fff;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="cabecalho">
+            <h1 class="titulo-cabecalho">PRODUTOS</h1>
+        </div>       
+    </header>
+
+    <main>
+        <div class="botoes">
+            <div class="botao-cadastrar">
+                <a href="./cadastrarProdutos.html">Cadastrar produto</a>
+            </div>
+            
+            <div class="botao-visualizar">
+                <a href="./visualizarProdutos.html">Visualizar produtos</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
