@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3322
+const port = 3308
 
 const path = require('path')
 const basePath = path.join(__dirname, 'templates')

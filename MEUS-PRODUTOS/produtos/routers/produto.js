@@ -1,5 +1,4 @@
 const { randomUUID } = require('crypto');
-const { response } = require('express');
 
 const express = require('express')
 
@@ -14,9 +13,9 @@ router.get('/', (req, res)=>{
     res.sendFile(`${basePath}/home.html`)
     })
     
-    router.get('/cadastrarProdutos.html', (req, res)=>{
-    res.sendFile(`${basePath}/cadastrarProdutos.html`)
-    })
+    // router.get('/cadastrarProdutos.html', (req, res)=>{
+    // res.sendFile(`${basePath}/cadastrarProdutos.html`)
+    // })
 
     router.get('/visualizarProdutos.html', (req, res)=>{
         res.sendFile(`${basePath}/visualizarProdutos.html`)
@@ -24,7 +23,7 @@ router.get('/', (req, res)=>{
     
         const produtos = [];
 
-    router.post('/cadastrarProdutos.html',(req, res)=>{
+    router.post('/cadastrar',(req, res)=>{
         const {preco, name, desc} = req.body
 
         const produto = {
@@ -41,9 +40,46 @@ router.get('/', (req, res)=>{
         
     })
 
-    router.get('/cadastarProdutos.html',(req,res)=>{
+    router.get('/cadastrar',(req,res)=>{
 return res.json(produtos)
     })
+
+
+router.delete('/produtos/:id',(req,res)=>{
+    const { id } = req.params
+
+    const produto = produtos.findIndex((produtos) => produto.id === id)
+
+    produtos.splice(produto, 1);
+
+    return res.json({"message":"produto deletado com sucesso"})
+
+})
+router.put('/produtos/:id',(req,res)=>{
+    const { id } = req.params
+    const {nome, preco, desc} = req.body
+    const produtoIndex = produtos.findIndex((produtos) => produtos.id === id);
+
+    if(produtoIndex === -1 ){
+        return res.status({"message":"produto não encontrado"})
+    }
+    
+    const produtoAtualizado ={
+        id,
+        nome,
+        preco,
+        desc
+    }
+
+    produtos[produtoIndex] = produtoAtualizado;
+    return res.json(produtoAtualizado)
+
+})
+
+
+
+
+
 
     module.exports = router
 
