@@ -24,11 +24,11 @@ router.get('/', (req, res)=>{
         const produtos = [];
 
     router.post('/cadastrar',(req, res)=>{
-        const {preco, name, desc} = req.body
+        const {preco, nome, desc} = req.body
 
         const produto = {
             id:randomUUID(),
-            name,
+            nome,
             preco,
             desc
         }
